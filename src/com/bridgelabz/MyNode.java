@@ -1,8 +1,11 @@
 package com.bridgelabz;
 
-public class MyNode<K> {
+import com.bridgelabz.INode;
+
+public class MyNode<K> implements INode<K> {
+
     private K key;
-    private MyNode next;
+    private INode<K> next;
 
     public MyNode(K key) {
 
@@ -10,22 +13,33 @@ public class MyNode<K> {
         this.next = null;
     }
 
-    public MyNode getNext() {
+    @Override
+    public K getKey() {
+        return key;
+    }
+
+    @Override
+    public void setKey(K key) {
+        this.key = key;
+    }
+
+    public INode<K> getNext() {
         return next;
     }
 
-    public void setNext(MyNode next) {
+    @Override
+    public void setNext(INode next) {
         this.next = next;
     }
 
-    public static void main(String[] args) {
+    @Override
+    public String toString() {
+        StringBuilder myNodeString = new StringBuilder();
+        myNodeString.append("{"+"Key=").append(key).append('}');
 
-        System.out.println("----- Welcome to Data Structure: Linked List -----");
-
-        MyNode<Integer> firstNode = new MyNode<Integer>(56);
-        MyNode<Integer> secondNode = new MyNode<Integer>(30);
-        MyNode<Integer> thirdNode = new MyNode<Integer>(70);
-        firstNode.setNext(secondNode);
-        secondNode.setNext(thirdNode);
+        if(next!=null) {
+            myNodeString.append("->").append(next);
+        }
+        return myNodeString.toString();
     }
 }
