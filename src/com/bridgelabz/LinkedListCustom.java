@@ -73,6 +73,20 @@ public class LinkedListCustom {
         newNode.setNext(temporaryNode);
     }
 
+//  UC5  Ability to delete the first
+//    element in the LinkedList
+//    of sequence 56->30->70 - Write pop method
+//- Note there is new head
+//- Final Sequence: 30->70
+
+    public INode deleteFirst() {
+        INode temporaryNode = this.head;
+        this.head = this.head.getNext();
+        return temporaryNode;
+
+    }
+
+
 
 
     public void printLinkedList () {
