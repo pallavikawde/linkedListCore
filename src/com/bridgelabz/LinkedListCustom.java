@@ -129,6 +129,26 @@ public class LinkedListCustom {
 
     }
 
+// UC8   Ability to insert 40 after 30 to
+//    the Linked List sequence of 56->30->70
+
+//- Search LinkedList to get Node with key value 30
+//            - Then Insert 40 to 30
+//            - Final Sequence: 56->30->40->70
+
+    public void insertWithKey(int key, INode newNode) {
+
+        INode nodeWithKeyValue = search(key); // UC7
+        if(nodeWithKeyValue.getKey().equals(key)) {  //key 70
+            INode temporaryNode = nodeWithKeyValue.getNext();
+            nodeWithKeyValue.setNext(newNode);
+            newNode.setNext(temporaryNode);
+        }
+        else {
+            System.out.println("Key Node Found");
+        }
+
+    }
 
     public void printLinkedList () {
         System.out.println("My Nodes: "+head);
