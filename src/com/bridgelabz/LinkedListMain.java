@@ -12,19 +12,26 @@ public class LinkedListMain {
         MyNode<Integer> firstNode = new MyNode<Integer>(56);
         MyNode<Integer> secondNode = new MyNode<Integer>(30);
         MyNode<Integer> thirdNode = new MyNode<Integer>(70);
-        MyNode<Integer> fourthNode = new MyNode<Integer>(80);
-
         LinkedListCustom myLinkedList = new LinkedListCustom();
         myLinkedList.add(firstNode);
-
         myLinkedList.append(thirdNode);
-        myLinkedList.append( fourthNode);
         myLinkedList.insert(firstNode, secondNode);
-
-        System.out.println("Linked list before deletion: ");
         myLinkedList.printLinkedList();
-        INode deletedNode = myLinkedList.deleteLastNode();
-        System.out.println("The deleted key value is:"+deletedNode.getKey());
+
+
+        /// searching thing
+        INode searchedKey = myLinkedList.search(20);
+
+        if(searchedKey.getKey().equals(20)) {
+            System.out.println("Key Found");
+        }
+        else {
+            System.out.println("Key Not Found");
+        }
+
+
+
+
 
 
 

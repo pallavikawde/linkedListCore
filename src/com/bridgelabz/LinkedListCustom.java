@@ -102,6 +102,32 @@ public class LinkedListCustom {
         return temporaryNode;
     }
 
+//    Ability to search
+//    LinkedList to find Node
+//    with value 30
+//- Loop through LinkedList to
+//    find node with key 30
+
+
+    public INode search(int key){
+        INode temperoryNode = head;
+        boolean isFound = false;
+
+        while(temperoryNode !=null && isFound == false){
+            if(temperoryNode.getKey().equals(key)) {
+                isFound = true;
+            } else {
+                temperoryNode = temperoryNode.getNext();
+            }
+        }
+
+        if(isFound)
+            return temperoryNode;
+        else {
+            return head;
+        }
+
+    }
 
 
     public void printLinkedList () {
