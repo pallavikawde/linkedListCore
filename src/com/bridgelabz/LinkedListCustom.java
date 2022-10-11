@@ -87,6 +87,21 @@ public class LinkedListCustom {
     }
 
 
+//  UC6  Ability to delete the last
+//    element in the LinkedList
+//    of sequence 56->30->70 - Write popLast method
+//- Note there is new tail
+//- Final Sequence: 56->30
+    public INode deleteLastNode() {
+        INode temporaryNode = head;
+        while(!temporaryNode.getNext().equals(tail)) {
+            temporaryNode = temporaryNode.getNext();
+        }
+        this.tail = temporaryNode;
+        temporaryNode = temporaryNode.getNext();
+        return temporaryNode;
+    }
+
 
 
     public void printLinkedList () {
