@@ -60,6 +60,19 @@ public class LinkedListCustom {
         }
     }
 
+//  UC4  Ability to insert
+//    30 between 56 and 70
+//            - Final Sequence: 56->30->70
+
+    public void insert(INode previousNode, INode newNode) {
+        // 56.getnext() address of 70
+        // addesss of 70 avialable
+        // 56.setNext(newNode)  56 -> 30 - > 70
+        INode temporaryNode = previousNode.getNext();
+        previousNode.setNext(newNode);
+        newNode.setNext(temporaryNode);
+    }
+
 
 
     public void printLinkedList () {
